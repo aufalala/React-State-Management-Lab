@@ -119,7 +119,8 @@ const App = () => {
         <h2>{(team.length) ?"Team:" : "Pick some team members!"}</h2>
         
         <ul>
-        {team.map((fighter) => (
+        {[...team].sort((a, b) => a.id - b.id)
+        .map((fighter) => (
           <li key={fighter.id}>  
           <img src={fighter.img} alt={fighter.name}></img>
           <h2>{fighter.name}</h2>
@@ -134,7 +135,8 @@ const App = () => {
 
       <h2>Fighters:</h2>
       <ul>
-      {zombieFighters.map((fighter) => (
+      {[...zombieFighters].sort((a, b) => a.id - b.id)
+      .map((fighter) => (
         <li key={fighter.id}>  
           <img src={fighter.img} alt={fighter.name}></img>
           <h2>{fighter.name}</h2>
