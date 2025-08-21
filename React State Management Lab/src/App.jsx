@@ -103,12 +103,10 @@ const App = () => {
   }
 
   const handleRemoveFighter = (zombie) => {
-    if (zombie.price <= money) {
-      setMoney((money) => money + zombie.price); 
-      setZombieFighters((ZombieFighters) => [...ZombieFighters, zombie]);
-      setTeam((team) =>
-        team.filter((fighter) => fighter.id !== zombie.id))
-    }
+    setMoney((money) => money + zombie.price); 
+    setZombieFighters((ZombieFighters) => [...ZombieFighters, zombie]);
+    setTeam((team) =>
+      team.filter((fighter) => fighter.id !== zombie.id))
   }
 
   return (
